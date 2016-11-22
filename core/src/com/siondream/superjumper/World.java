@@ -39,6 +39,12 @@ import com.siondream.superjumper.components.StateComponent;
 import com.siondream.superjumper.components.TextureComponent;
 import com.siondream.superjumper.systems.RenderingSystem;
 
+/*
+Q: Ca a l'air un ptit peu hors de propos pour du ECS, on n'a pas un autre moyen d'initialiser l'engine et
+de stocker les données ?
+ */
+
+
 public class World {
 	public static final float WORLD_WIDTH = 10;
 	public static final float WORLD_HEIGHT = 15 * 20;

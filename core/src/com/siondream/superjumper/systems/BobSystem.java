@@ -26,6 +26,32 @@ import com.siondream.superjumper.components.MovementComponent;
 import com.siondream.superjumper.components.TransformComponent;
 import com.siondream.superjumper.components.StateComponent;
 
+
+/*
+README: Réflexion générale sur les systems. Bon ça a l'air ok ce qu'il fait du pdv d'Ashley. Nous on voudrait
+soit faire deux moteurs, un pour l'ui avec scene2D le scene graph, et le jeu avec les components fin je l'ai
+compris comme ça pour le moment.
+
+Je pense toujours à ma première solution pour éviter ça:
+Une family NestedEntity qui contient: (*voir plus bas)
+- Un vecteur d'Entity& children
+- Un vecteur d'Entity& parents
+Associé à ça, un NestedEntitySystem qui contient une fonction abstraite UpdateRelated(): Dans les systems fils,
+elle met à jour les Entity sur la base des data des parents (ex basePos.x = parent.basePos.x).
+On l'appelle dans le update du NestedEntitySystem en tête de fonction, avant quoi que ce soit.
+Ca marche sûr pour les déplacements et c'est suffisamment souple pour même pouvoir faire des trucs un
+peu plus compliqués. Coût de travail ? l'overrider dans les systems qui en ont besoin en trois lignes.
+Résultats:
+    On peut utiliser le component-based pour l'ui en gardant le principe du scenegraph. On mélange pas avec
+    LibGDX.
+    On peut utiliser le principe du scenegraph in-game en gardant le principe du component based et faire
+    des objets composites.
+    On est contents.
+    On suce Dvide.
+MAIIIIIS: Je connais pas bien libgdx et je suis sûr qu'en haut (*) ya des objets dans libgdx qui gèrent ça mieux
+que des vecteurs. Reste à voir si on peut les appliquer.
+ */
+
 public class BobSystem extends IteratingSystem {
 	private static final Family family = Family.all(BobComponent.class,
 													   StateComponent.class,

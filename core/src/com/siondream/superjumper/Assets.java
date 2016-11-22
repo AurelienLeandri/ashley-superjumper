@@ -25,6 +25,13 @@ import com.badlogic.gdx.graphics.g2d.Animation.PlayMode;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+/*
+README: OK ça c'est laid.
+On est d'accord qu'on renomme ça en AssetsManager et que c'est la classe qui va wrapper Overlap Runtime ? En
+gros récupérer les data, transformer en components/entities et faire un World.add(entity). Les textures seront
+stockées en components.
+ */
+
 public class Assets {
 	public static Texture background;
 	public static TextureRegion backgroundRegion;

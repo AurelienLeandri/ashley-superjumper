@@ -23,6 +23,13 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 
+/*
+README: Assertion: Ils ont l'air de vouloir utiliser deux systèmes comme on voudrait le faire. L'ECS est que dans cette
+classe, les autres classes Screen ça ressemble déjà plus à du libgdx même si ya moyen de faire mieux
+que MonScreenDeMerdeX
+ */
+
+
 public class MainMenuScreen extends ScreenAdapter {
 	SuperJumper game;
 	OrthographicCamera guiCam;
